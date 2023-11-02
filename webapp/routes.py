@@ -1,0 +1,1 @@
+# This file defines the routes and views (endpoints) for your web application. It specifies what happens when a user accesses specific URLs.

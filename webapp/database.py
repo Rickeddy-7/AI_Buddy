@@ -1,0 +1,1 @@
+# This file contains code to set up and manage the SQLite database used by your application.

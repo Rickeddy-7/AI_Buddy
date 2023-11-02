@@ -21,6 +21,7 @@ The staggering amount of children who can't read and comprehend as well as a sig
 - Personalised AI assistant that learns from the educators teaching patterns to tailor their experience and promote effectiveness and help them become better at their jobs
 
 ### Tech Stack:
+- Html, Css and JavaScript for front-end development 
 - Python for backend business logic
 - OpenAI API for the GPT models
 - SQLite 
