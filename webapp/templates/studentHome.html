@@ -6,16 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet " href="/webapp/static/styling.css" />
+    <style>
+      #navbar ul li:nth-child(4) a {
+        color: #888; /* Grayed-out text color */
+        pointer-events: none; /* Disable click events */
+      }
+      /* Apply the grayed-out style to the CodeLab form and its elements */
+      .codeLab-form {
+        color: #888; /* Grayed-out text color */
+        pointer-events: none; /* Disable click events */
+      }
+    </style>
   </head>
   <body>
     <nav id="navbar">
       <ul>
-        <li><a href="teacherLanding.html">Home</a></li>
-        <li><a href="assistance.html">LiteracyLab</a></li>
-        <li><a href="classroom.html">GameLab</a></li>
-        <li><a href="myClasses.html">CodeLab</a></li>
-        <li><a href="myProfile.html" aria-disabled="true">My Profile</a></li>
-        <li><a href="index.html">Logout</a></li>
+        <li><a href="/webapp/templates/studentHome.html">Home</a></li>
+        <li><a href="/webapp/templates/literacyLab.html">LiteracyLab</a></li>
+        <li><a href="/webapp/templates/gameLab.html">GameLab</a></li>
+        <li><a href="/webapp/templates/codeLab.html">CodeLab</a></li>
+        <li>
+          <a href="/webapp/templates/profile.html" aria-disabled="true"
+            >My Profile</a
+          >
+        </li>
+        <li><a href="/webapp/templates/index.html">Logout</a></li>
       </ul>
     </nav>
     <h1><strong>Welcome ....</strong></h1>
