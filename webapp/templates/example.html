@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+        #myImage {
+            transition: all 0.5s ease;
+        }
+
+        #myImage:hover {
+            transform: rotate(360deg);
+        }
+
+    </style>
+
+    <div id="roleSelection">
+        <label><input type="radio" name="role" value="teacher" onclick="showForm('teacher')"> Teacher</label>
+        <label><input type="radio" name="role" value="student" onclick="showForm('student')"> Student</label> 
+    </div>
+    
+
+    <a href="your-link.html">
+        <img id="myImage" src="img/47758706-removebg-preview.png" alt="My Image">
+    </a>
+
+    <form id="teacher" class="hidden">
+        <!-- Teacher registration form  -->
+        <label for="">Name and Surname</label>
+        <input type="text" name="name" id="name">
+        <label for="">Email</label>
+        <input type="text" name="email" id="email">
+        <label for="">Create a password</label>
+        <input type="text" name="password" id="password">
+        <label for="">Confirm email</label>
+        <input type="text" name="confirm_password" id="confirm_password">
+
+        <input type="submit" value="Register">
+
+    </form>
+
+    <form id="student" class="hidden">
+        <!-- Student registration form -->
+        <label for="">Name and Surname</label>
+        <input type="text" name="name" id="name" placeholder="Enter full names">
+        <label for="">Email</label>
+        <input type="text" name="email" id="email" placeholder="Enter email address">
+        <label for="">ID number</label>
+        <label for="">Age</label>
+        <input type="number" name="age" id="age" placeholder="Enter child's age">
+        <label for="">Create a password: (Must contain)</label>
+        <input type="text" name="password" id="password" placeholder="Enter your desired password">
+        <label for="">Confirm email</label>
+        <input type="text" name="confirm_password" id="confirm_password" placeholder="Confirm password">
+        <!-- submit button -->
+        <input type="submit" value="Register">
+
+    </form>
+
+    <div id="qrcode"></div>
+
+    <script>
+
+        function showForm(role) {
+            document.getElementById('teacher').style.display = 'none';
+            document.getElementById('student').style.display = 'none';
+            document.getElementById(role).style.display = 'block';
+
+            // Disable the radio buttons
+            var radios = document.getElementsByName('role');
+            for (var i = 0; i < radios.length; i++) {
+                radios[i].disabled = true;
+            }
+        }
+
+        var phone_number = "0608758429"; // Replace with your phone number
+            var message = "Hello, this is a test message!"; // Replace with your message
+            var whatsapp_url = "https://wa.me/" + phone_number + "?text=" + encodeURIComponent(message);
+
+            var qrcode = new QRCode(document.getElementById("qrcode"), {
+                text: whatsapp_url,
+                width: 128,
+                height: 128
+            });
+    </script>
+
+</body>
+
+</html>
