@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+</head>
+
+<body>
+
+    <style>
+        #roleSelection {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        #myImage {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            width: 100px; 
+            height: auto;
+        }
+
+    </style>
+
+    <div id="roleSelection">
+        <label><input type="radio" name="role" value="teacher" onclick="showForm('teacher')"> Teacher</label>
+        <label><input type="radio" name="role" value="student" onclick="showForm('student')"> Student</label> 
+    </div>
+    
+
+    <img id="myImage" src="img/47758706-removebg-preview.png" alt="My Image">
+
+    <form id="teacher" class="hidden">
+        <!-- Teacher registration form  -->
+        <label for="">Name and Surname</label>
+        <input type="text" name="name" id="name">
+        <label for="">Email</label>
+        <input type="text" name="email" id="email">
+        <label for="">Create a password: (Must contain: a minimum of 1 lower case letter [a-z] and
+        a minimum of 1 upper case letter [A-Z] and
+        a minimum of 1 numeric character [0-9] and
+        a minimum of 1 special character: ~`!@#$%^&*()-_+={}[]|\;:">,./?)</label>
+        <input type="text" name="password" id="password">
+        <label for="">Confirm email</label>
+        <input type="text" name="confirm_password" id="confirm_password">
+
+        <!-- submit button -->
+        <input type="submit" value="Register">
+
+
+
+    </form>
+
+    <form id="student" class="hidden">
+        <!-- Student registration form -->
+        <label for="">Name and Surname</label>
+        <input type="text" name="name" id="name" placeholder="Enter full names">
+        <label for="">Email</label>
+        <input type="text" name="email" id="email" placeholder="Enter email address">
+        <label for="">ID number</label>
+        <label for="">Age</label>
+        <input type="number" name="age" id="age" placeholder="Enter child's age">
+        <label for="">Create a password: (Must contain)</label>
+        <input type="text" name="password" id="password" placeholder="Enter your desired password">
+        <label for="">Confirm email</label>
+        <input type="text" name="confirm_password" id="confirm_password" placeholder="Confirm password">
+        <!-- submit button -->
+        <input type="submit" value="Register">
+
+    </form>
+
+    <script>
+        function showForm(role) {
+            document.getElementById('teacher').style.display = 'none';
+            document.getElementById('student').style.display = 'none';
+            document.getElementById(role).style.display = 'block';
+
+            // Disable the radio buttons
+            var radios = document.getElementsByName('role');
+            for (var i = 0; i < radios.length; i++) {
+                radios[i].disabled = true;
+            }
+        }
+    </script>
+
+</body>
+
+</html>

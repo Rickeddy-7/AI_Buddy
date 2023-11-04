@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher</title>
+</head>
+<body>
+
+    <style>
+        #navbar {
+            background-color: #333;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        #navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        #navbar li {
+            float: left;
+        }
+
+        #navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        #navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        #navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        #navbar a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        #navbar-right {
+            float: right;
+        }
+
+        body {
+            background: linear-gradient(
+                to right,
+                #a8edea 0%,
+                rgb(241, 241, 151),
+                #fed6e3 100%
+            );
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            background: transparent;
+            padding: 20px;
+            margin-right: 25px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 50%;
+        }
+
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #container {
+            display: flex;
+            flex-direction: rows;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #roleSelection {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        #myImage {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            width: 100px; 
+            height: auto;
+        }
+    </style>
+
+    <nav id="navbar">
+        <ul>
+            <li><a href="teacherLanding.html">Home</a></li>
+            <li><a href="assistance.html">Assistance</a></li>
+            <li><a href="classroom.html">Classroom</a></li>
+            <li><a href="myClasses.html">My Classes</a></li>
+            <li><a href="myStudents.html">My Students</a></li>
+            <li><a href="myProfile.html" aria-disabled="true">My Profile</a></li>
+            <li><a href="index.html">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div id="container">
+        <div id="assistance">
+            <img src="/webapp/static/images/reading.png" alt="reading" width="80%">
+            <p>
+                
+            </p>
+            <h1>Reading Assistance</h1>
+            <p>Click on the button below to request assistance for the teacher.</p>
+            <button id="assistanceButton">Request Assistance</button>
+        </div>
+
+        <div id="classroom">
+            <img src="/webapp/static/images/stats.png" alt="tracking" width="90%">
+            <h1>Student tracking</h1>
+            <p>Click on the button below to enter the classroom.</p>
+            <button id="classroomButton">Enter Classroom</button>
+        </div>
+
+        <div id="myClasses">
+            <img src="/webapp/static/images/planning.png" alt="planning" width="55%">
+            <br  />
+            <br />
+        </br>
+            <h1>Lesson planning</h1>
+            <p>Click on the button below to view your reading improvement classes.</p>
+            <button id="myClassesButton">View Classes</button>  
+        </div>
+
+        <div id="myStudents">
+            <img src="/webapp/static/images/marking.png" alt="marking" width="55%">
+            <h1>Marking</h1>
+            <p>Click on the button below to view your student's progress.</p>
+            <button id="myStudentsButton">View Students</button>
+        </div>
+
+    </div>
+
+    <img id="qrCode" src="data:image/png;base64,{{ qr_code }}" alt="QR Code">
+
+
+    <img id="myImage" src="/webapp/static/images/bot.png" alt="My Image">
+    
+    <script>
+        const assistanceButton = document.getElementById("assistanceButton");
+        const classroomButton = document.getElementById("classroomButton");
+        const myClassesButton = document.getElementById("myClassesButton");
+        const myStudentsButton = document.getElementById("myStudentsButton");
+        const myProfileButton = document.getElementById("myProfileButton");
+        const logoutButton = document.getElementById("logoutButton");
+
+        assistanceButton.addEventListener("click", () => {
+            window.location.href = "assistance.html";
+        });
+
+        classroomButton.addEventListener("click", () => {
+            window.location.href = "classroom.html";
+        });
+
+        myClassesButton.addEventListener("click", () => {
+            window.location.href = "myClasses.html";
+        });
+
+        myStudentsButton.addEventListener("click", () => {
+            window.location.href = "myStudents.html";
+        });
+
+        myProfileButton.addEventListener("click", () => {
+            window.location.href = "myProfile.html";
+        });
+
+        logoutButton.addEventListener("click", () => {
+            window.location.href = "index.html";
+        });
+    </script>
+
+</body>
+</html>

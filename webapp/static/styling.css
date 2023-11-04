@@ -1,8 +1,101 @@
 h1 {
   text-align: center;
   color: black;
+  font-family: "Andika", sans-serif;
+  padding-bottom: 100px;
+  padding-top: 50px;
 }
-.white-A
+strong {
+  padding-bottom: 20px;
+}
+.white-A {
+  color: black;
+  font-family: "Andika", sans-serif;
+}
 body {
-  background: linear-gradient(to right, #a8edea 0%, #fed6e3 100%);
+  background: linear-gradient(
+    to right,
+    #a8edea 0%,
+    rgb(241, 241, 151),
+    #fed6e3 100%
+  );
+}
+#myImage {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 200px; /* adjust as needed */
+  height: auto;
+}
+.rounded-form {
+  border-radius: 20px;
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.form-control {
+  font-size: 18px;
+  padding: 15px;
+}
+
+.btn-primary {
+  background-color: rgb(2, 2, 32);
+  color: white;
+  border: 2px solid black;
+
+  margin-top: 40px;
+}
+
+.btn-primary:hover {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+}
+#navbar {
+  background-color: #333;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+#navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+#navbar li {
+  float: left;
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#navbar a.active {
+  background-color: #4caf50;
+  color: white;
+}
+
+#navbar-right {
+  float: right;
 }
