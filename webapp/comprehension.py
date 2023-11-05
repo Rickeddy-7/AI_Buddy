@@ -45,7 +45,7 @@ def play_game():
             prompt = f"Is '{user_ans}' similar to '{answers[i]}' ?'"
             result: str = use_gpt(role, prompt)
             print(result.upper())
-            while not (result.lower() == 'true'):
+            while not (result.lower()[:4] == 'true'):
                 print("Not quite, try again\n")
                 user_ans = input(questions[i])
                 prompt = f"Is '{user_ans}' similar to '{answers[i]}' ?'"
@@ -53,6 +53,9 @@ def play_game():
             else:
                 print(random.choice(affirmations) + '\n')
                 continue
+        
+        print("Great Work. You have shown a brilliant understanding of the short story!!")
+        break
 
 
 def read_story_from_file():
@@ -60,6 +63,3 @@ def read_story_from_file():
 
     with open('webapp/story.txt') as file:
         print(file.readlines())
-
-
-play_game()
